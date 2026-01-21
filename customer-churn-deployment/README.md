@@ -147,3 +147,12 @@ The model is suitable for **retention-focused decision-making**.
 ## Author
 Faheem  
 B.Tech Computer Science & Engineering
+
+
+# Deployment Notes
+
+Model trained using scikit-learn X.Y.Z and XGBoost A.B.C
+Deployment environment strictly matches training versions
+Calibration applied offline; inference uses fixed threshold (0.19)
+Docker used to ensure environment reproducibility
+Known pitfalls: sklearn and xgboost pickling incompatibilities
