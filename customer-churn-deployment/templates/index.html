@@ -1,1 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Churn Prediction</title>
+</head>
+<body>
+    <h2>Customer Churn Prediction</h2>
 
+    <form action="/predict" method="post">
+
+        <label>Tenure (months)</label><br>
+        <input type="number" name="tenure" required><br><br>
+
+        <label>Monthly Charges</label><br>
+        <input type="number" step="0.01" name="MonthlyCharges" required><br><br>
+
+        <label>Total Charges</label><br>
+        <input type="number" step="0.01" name="TotalCharges" required><br><br>
+
+        <label>Senior Citizen</label><br>
+        <select name="SeniorCitizen">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+
+        <label>Dependents</label><br>
+        <select name="Dependents">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+
+        <label>Paperless Billing</label><br>
+        <select name="PaperlessBilling">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+
+        <label>Contract</label><br>
+        <select name="Contract">
+            <option value="Month-to-month">Month-to-month</option>
+            <option value="One year">One year</option>
+            <option value="Two year">Two year</option>
+        </select><br><br>
+
+        <label>Internet Service</label><br>
+        <select name="InternetService">
+            <option value="DSL">DSL</option>
+            <option value="Fiber optic">Fiber optic</option>
+            <option value="No">No</option>
+        </select><br><br>
+
+        <label>Payment Method</label><br>
+        <select name="PaymentMethod">
+            <option value="Electronic check">Electronic check</option>
+            <option value="Mailed check">Mailed check</option>
+            <option value="Bank transfer (automatic)">Bank transfer (automatic)</option>
+            <option value="Credit card (automatic)">Credit card (automatic)</option>
+        </select><br><br>
+
+        <button type="submit">Predict</button>
+    </form>
+</body>
+  </html>
