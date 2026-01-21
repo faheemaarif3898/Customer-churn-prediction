@@ -70,8 +70,8 @@ def home():
 def predict():
     input_df = create_features(request.form)
 
-    proba = model.predict_proba(input_df)[0][1]
-    prediction = int(proba >= 0.19)
+    prob = model.predict_proba(input_df)[0][1]
+    prediction = int(prob >= 0.19)
 
     result = "Likely to Churn" if prediction else "Not Likely to Churn"
 
