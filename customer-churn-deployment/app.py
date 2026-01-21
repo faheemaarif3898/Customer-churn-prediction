@@ -5,7 +5,7 @@ import pandas as pd
 app = Flask(__name__)
 
 # Load trained model
-with open("calibrated_model.pkl", "rb") as f:
+with open("model_pipeline.pkl", "rb") as f:
     model = pickle.load(f)
 
 
@@ -70,10 +70,8 @@ def home():
 def predict():
     input_df = create_features(request.form)
 
-    # Get probability from underlying pipeline
-    prob = model.estimators_[0].predict_proba(input_df)[0][1]
-    prediction = int(prob >= 0.19)
-    prediction = int(prob >= 0.19)
+    proba = model.predict_proba(input_df)[0][1]
+    prediction = int(proba >= 0.19)
 
     result = "Likely to Churn" if prediction else "Not Likely to Churn"
 
