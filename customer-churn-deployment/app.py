@@ -73,7 +73,7 @@ def predict():
     proba = model.predict_proba(input_df)[0][1]
     prediction = int(proba >= 0.19)
 
-    result = "Likely to Churn" if prediction else "Not Likely to Churn"
+    #result = "Likely to Churn" if prediction else "Not Likely to Churn"
 
     return render_template(
         "result.html",
